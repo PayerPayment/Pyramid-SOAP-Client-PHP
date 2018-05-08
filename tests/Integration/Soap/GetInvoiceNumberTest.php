@@ -15,7 +15,7 @@ class GetInvoiceNumberTest extends ApiClientTestCase
     {
         try {
             $request = new GetInvoiceNumberRequest();
-            $request->setOrderNumber('022318');
+            $request->setOrderNumber('O22336');
 
             $response = $this->client->getInvoiceNumber($request);
             $this->assertEquals('Invoice found', $response->getMessage());
@@ -28,7 +28,7 @@ class GetInvoiceNumberTest extends ApiClientTestCase
     {
         try {
             $request = new GetInvoiceNumberRequest();
-            $request->setOrderNumber('022318XX');
+            $request->setOrderNumber('O22336XX');
 
             $response = $this->client->getInvoiceNumber($request);
             $this->assertContains('No matching ordernumber found', $response->getMessage());
